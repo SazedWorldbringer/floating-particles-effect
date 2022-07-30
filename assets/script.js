@@ -38,3 +38,20 @@ Particle.prototype.update = function () {
   }
 };
 // if the particle has reached the edge of the screen, switch it's direction
+
+// create particle array
+function init() {
+  particleArray = [];
+  for (let i = 0; i < 100; i++) {
+    let size = Math.random() * 20; // a random number between 0 and 20
+    let x = Math.random() * (innerWidth - size * 2); // a random number between 0 and canvas width
+    let y = Math.random() * (innerHeight - size * 2); // a random number between 0 and canvas height
+    let directionX = Math.random() * 0.4 - 0.2; // a random number between -0.2 and -0.2
+    let directionY = Math.random() * 0.4 - 0.2; // a random number between -0.2 and -0.2
+    let color = "white";
+
+    particleArray.push(new Particle(x, y, directionX, directionY, size, color));
+  }
+}
+// initializes particles and passes random values to each particle,
+// then pushes the particle to particlesArray
