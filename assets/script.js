@@ -28,5 +28,13 @@ Particle.prototype.draw = function () {
 // create a draw method for each instance of the particle method, which will cause
 // performance issues
 
-const particle1 = new Particle(100, 100, 1, 1, 20, "black");
-particle1.draw();
+// add update method to particle prototype
+Particle.prototype.update = function () {
+  if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+    this.directionX = -this.directionX;
+  }
+  if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+    this.directionY = -this.directionY;
+  }
+};
+// if the particle has reached the edge of the screen, switch it's direction
