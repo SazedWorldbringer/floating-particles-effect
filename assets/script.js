@@ -1,5 +1,6 @@
 const canvas = document.getElementById("canvas1");
-const ctx = document.getContext("2d"); // 2 dimensional rendering context
+console.log(canvas);
+const ctx = canvas.getContext("2d"); // 2 dimensional rendering context
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 let particleArray;
@@ -27,5 +28,5 @@ Particle.prototype.draw = function () {
 // create a draw method for each instance of the particle method, which will cause
 // performance issues
 
-const particle1 = new Particle(10, 10, 1, 1, 20, "white");
+const particle1 = new Particle(100, 100, 1, 1, 20, "black");
 particle1.draw();
