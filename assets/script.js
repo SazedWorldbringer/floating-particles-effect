@@ -56,4 +56,24 @@ function init() {
   }
 }
 // initializes particles and passes random values to each particle,
-// then pushes the particle to particlesArray
+// then pushes the particle to particleArray
+
+// animation loop
+function animate() {
+  requestAnimationFrame(animate);
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+  for (let i = 0; i < particleArray.length; i++) {
+    particleArray[i].update();
+  }
+}
+
+// clear a canvas in each frame with ctx.clearRect(),
+// otherwise the particles will leave trail.
+// it will delete the entire canvas over and over,
+// so it's ready for an update to occur.
+// then, the for loop will traverse over the particleArray,
+// and run the update method for each particle.
+// the update method checks if the particle has reached the edge of the screen,
+// if it has, the particle's direction is reversed,
+// if it hasn't, the particle is drawn
