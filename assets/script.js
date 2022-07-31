@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d"); // 2 dimensional rendering context
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 let particleArray;
+const colors = ["#cdb4db", "#ffc8dd", "#ffafcc", "#bde0fe", "#a2d2ff"];
 
 // create constructor function
 function Particle(x, y, directionX, directionY, size, color) {
@@ -52,7 +53,7 @@ function init() {
     let y = Math.random() * (innerHeight - size * 2); // a random number between 0 and canvas height
     let directionX = Math.random() * 0.4 - 0.2; // a random number between -0.2 and -0.2
     let directionY = Math.random() * 0.4 - 0.2; // a random number between -0.2 and -0.2
-    let color = "white";
+    let color = colors[Math.floor(Math.random() * colors.length)];
 
     particleArray.push(new Particle(x, y, directionX, directionY, size, color));
   }
