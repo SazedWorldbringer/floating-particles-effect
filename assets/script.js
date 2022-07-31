@@ -4,7 +4,18 @@ const ctx = canvas.getContext("2d"); // 2 dimensional rendering context
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 let particleArray;
-const colors = ["#cdb4db", "#ffc8dd", "#ffafcc", "#bde0fe", "#a2d2ff"];
+const colors = [
+  "#cdb4db",
+  "#ffc8dd",
+  "#ffafcc",
+  "#bde0fe",
+  "#a2d2ff",
+  "#3a86ff",
+  "#8338ec",
+  "#ff006e",
+  "#fb5607",
+  "#ffbe0b",
+];
 
 // create constructor function
 function Particle(x, y, directionX, directionY, size, color) {
