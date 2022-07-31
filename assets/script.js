@@ -82,3 +82,12 @@ function animate() {
 
 init();
 animate();
+
+window.addEventListener("resize", () => {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+  init();
+});
+// without this eventlistener, the screen stretches when you resize the window
+// whenever the window is resized, canvas.width and canvas.height are updated with
+// the new innerWidth and innerHeight, and init function is called again
