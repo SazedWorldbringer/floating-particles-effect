@@ -59,11 +59,11 @@ Particle.prototype.update = function () {
 function init() {
   particleArray = [];
   for (let i = 0; i < 100; i++) {
-    let size = Math.random() * 20; // a random number between 0 and 20
+    let size = Math.random() * 50; // a random number between 0 and 50(default between 0 and 20)
     let x = Math.random() * (innerWidth - size * 2); // a random number between 0 and canvas width
     let y = Math.random() * (innerHeight - size * 2); // a random number between 0 and canvas height
-    let directionX = Math.random() * 0.4 - 0.2; // a random number between -0.2 and -0.2
-    let directionY = Math.random() * 0.4 - 0.2; // a random number between -0.2 and -0.2
+    let directionX = Math.random() * 2; // a random number between 0 and 2(default between -0.2 and -0.2)
+    let directionY = Math.random() * 2; // a random number between 0 and 2(default between -0.2 and -0.2)
     let color = colors[Math.floor(Math.random() * colors.length)];
 
     particleArray.push(new Particle(x, y, directionX, directionY, size, color));
