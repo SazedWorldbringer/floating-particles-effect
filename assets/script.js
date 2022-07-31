@@ -77,3 +77,6 @@ function animate() {
 // the update method checks if the particle has reached the edge of the screen,
 // if it has, the particle's direction is reversed,
 // if it hasn't, the particle is drawn
+
+init();
+animate();
