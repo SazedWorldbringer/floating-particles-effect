@@ -36,6 +36,8 @@ Particle.prototype.update = function () {
   if (this.y + this.size > canvas.height || this.y - this.size < 0) {
     this.directionY = -this.directionY;
   }
+  this.x += this.directionX;
+  this.y += this.directionY;
   this.draw();
 };
 // if the particle has reached the edge of the screen, switch it's direction
